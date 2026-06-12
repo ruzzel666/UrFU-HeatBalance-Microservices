@@ -1,0 +1,241 @@
+/* ===== HomePage Styles ===== */
+
+.home-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 8px 0 40px;
+}
+
+/* ===== Hero ===== */
+
+.hero-section {
+  position: relative;
+  padding: 48px 40px 40px;
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  margin-bottom: 40px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.hero-glow {
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(
+    circle,
+    rgba(232, 89, 12, 0.08) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-tag {
+  margin-bottom: 16px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  border-radius: 20px;
+  padding: 2px 12px;
+}
+
+.hero-title {
+  font-size: 36px !important;
+  font-weight: 700 !important;
+  line-height: 1.25 !important;
+  margin-bottom: 16px !important;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+.hero-highlight {
+  background: linear-gradient(135deg, #e8590c 0%, #fa8c16 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-description {
+  font-size: 16px;
+  color: var(--text-secondary);
+  max-width: 640px;
+  line-height: 1.7;
+  margin-bottom: 0 !important;
+}
+
+/* ===== Section Title ===== */
+
+.section-title {
+  margin-bottom: 20px !important;
+  font-weight: 600 !important;
+  color: var(--text-primary);
+}
+
+/* ===== Furnace Cards ===== */
+
+.furnace-cards-section {
+  margin-bottom: 40px;
+}
+
+.furnace-card {
+  border-radius: var(--radius-lg) !important;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all var(--transition-normal) !important;
+}
+
+.furnace-card:hover {
+  box-shadow: var(--shadow-lg) !important;
+  transform: translateY(-4px) !important;
+}
+
+.furnace-card:hover .furnace-card-link {
+  color: var(--color-primary);
+  gap: 8px;
+}
+
+.furnace-card .ant-card-body {
+  padding: 28px !important;
+}
+
+.furnace-card-inner {
+  display: flex;
+  gap: 20px;
+}
+
+.furnace-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  color: #fff;
+  font-size: 26px;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-md);
+}
+
+.furnace-card-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.furnace-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.furnace-card-title {
+  font-size: 17px;
+}
+
+.furnace-card-desc {
+  font-size: 13.5px;
+  line-height: 1.6;
+  margin-bottom: 12px !important;
+}
+
+.furnace-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.param-tag {
+  background: rgba(232, 89, 12, 0.06) !important;
+  border-color: rgba(232, 89, 12, 0.15) !important;
+  color: var(--color-primary) !important;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.furnace-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: all var(--transition-normal);
+}
+
+/* ===== Features ===== */
+
+.features-section {
+  margin-bottom: 20px;
+}
+
+.feature-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 32px 24px;
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+}
+
+.feature-item:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.feature-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(232, 89, 12, 0.07);
+  color: var(--color-primary);
+  font-size: 22px;
+  margin-bottom: 16px;
+}
+
+.feature-title {
+  font-size: 15px;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.feature-text {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* ===== Responsive ===== */
+
+@media (max-width: 768px) {
+  .home-page {
+    padding: 0 0 24px;
+  }
+
+  .hero-section {
+    padding: 32px 24px;
+  }
+
+  .hero-title {
+    font-size: 26px !important;
+  }
+
+  .furnace-card-inner {
+    flex-direction: column;
+    gap: 14px;
+  }
+}

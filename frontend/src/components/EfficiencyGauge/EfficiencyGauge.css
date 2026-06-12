@@ -1,0 +1,77 @@
+/* ===== EfficiencyGauge Styles ===== */
+
+.efficiency-gauge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  padding: 16px;
+}
+
+.gauge-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -55%);
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.efficiency-gauge .ant-progress {
+  position: relative;
+  z-index: 1;
+}
+
+.gauge-inner {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 2px;
+}
+
+.gauge-value {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--text-primary);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+.gauge-percent {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.gauge-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-align: center;
+}
+
+.gauge-symbol {
+  font-size: 13px;
+  font-style: italic;
+}
+
+/* Pulse animation on the progress ring */
+.efficiency-gauge .ant-progress-circle {
+  animation: gaugeAppear 0.8s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+@keyframes gaugeAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
