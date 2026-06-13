@@ -72,3 +72,51 @@
   border-radius: 6px;
   padding: 2px 12px;
 }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .results-table {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .results-table .ant-table {
+    min-width: 500px;
+  }
+
+  .results-table .ant-table-thead > tr > th {
+    font-size: 12px;
+    padding: 8px !important;
+    white-space: nowrap;
+  }
+
+  .results-table .ant-table-tbody > tr > td {
+    padding: 8px !important;
+    font-size: 12px;
+  }
+
+  .results-value {
+    font-size: 12px;
+  }
+
+  .results-unit {
+    font-size: 10px !important;
+  }
+
+  .percent-bar-bg {
+    height: 5px;
+  }
+
+  .percent-value {
+    font-size: 11px;
+  }
+
+  .summary-value {
+    font-size: 12px !important;
+  }
+
+  .total-tag {
+    font-size: 11px;
+    padding: 1px 8px;
+  }
+}

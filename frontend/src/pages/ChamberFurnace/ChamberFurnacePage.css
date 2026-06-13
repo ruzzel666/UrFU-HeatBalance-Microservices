@@ -180,16 +180,126 @@
     padding: 16px !important;
   }
 
-  .page-header-tag {
-    margin-left: 0;
+  .page-header {
+    gap: 10px;
+    margin-bottom: 16px;
   }
 
+  .page-header-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    border-radius: 10px;
+  }
+
+  .page-header h3.ant-typography {
+    font-size: 18px !important;
+  }
+
+  .page-header-tag {
+    margin-left: 0;
+    order: -1;
+    align-self: flex-start;
+  }
+
+  /* Tabs — scrollable, icons hidden to save space */
+  .form-tabs .ant-tabs-nav {
+    margin-bottom: 16px !important;
+  }
+
+  .form-tabs .ant-tabs-tab {
+    padding: 8px 2px !important;
+    font-size: 13px;
+  }
+
+  .form-tabs .ant-tabs-tab .anticon {
+    display: none;
+  }
+
+  .form-tabs .ant-tabs-nav-wrap {
+    overflow-x: auto !important;
+  }
+
+  /* Tab content */
+  .tab-description {
+    font-size: 13px;
+    margin-bottom: 14px;
+  }
+
+  /* Fields — full width on small screens */
+  .field-label {
+    font-size: 13px;
+  }
+
+  .field-symbol {
+    font-size: 11px;
+  }
+
+  /* Temperature table — horizontal scroll */
+  .temp-schedule-table {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .temp-schedule-table .ant-input-number {
+    max-width: 100px;
+    min-width: 80px;
+  }
+
+  /* Actions — stack vertically, full-width button */
   .form-actions {
     flex-direction: column;
     align-items: stretch;
+    gap: 12px;
+  }
+
+  .form-actions .ant-space {
+    display: flex !important;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .form-actions .ant-space-item {
+    width: 100%;
   }
 
   .submit-btn {
-    width: 100%;
+    width: 100% !important;
+    height: 48px !important;
+    font-size: 14px !important;
+    padding: 0 16px !important;
+  }
+
+  .form-actions button:not(.submit-btn) {
+    width: 100% !important;
+    height: 44px !important;
+  }
+
+  .form-hint {
+    text-align: center;
+    justify-content: center;
+    font-size: 12px;
+  }
+
+  /* Input number addon */
+  .form-card .ant-input-number-group-addon {
+    font-size: 12px;
+    min-width: 28px;
+    padding: 0 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-header h3.ant-typography {
+    font-size: 16px !important;
+  }
+
+  .form-card .ant-card-body {
+    padding: 12px !important;
+  }
+
+  .form-tabs .ant-tabs-tab {
+    font-size: 12px;
+    padding: 6px 0 !important;
   }
 }

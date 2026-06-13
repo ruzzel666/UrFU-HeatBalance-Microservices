@@ -4,7 +4,7 @@
   min-height: 100vh;
 }
 
-/* ===== Sider ===== */
+/* ===== Desktop Sider ===== */
 
 .main-sider {
   position: fixed !important;
@@ -24,7 +24,32 @@
   height: 100%;
 }
 
-/* Logo */
+/* ===== Mobile Drawer ===== */
+
+.mobile-drawer .ant-drawer-header {
+  background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 12px 16px !important;
+  min-height: 0;
+}
+
+.mobile-drawer .ant-drawer-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.drawer-close-btn {
+  color: rgba(255, 255, 255, 0.7) !important;
+  font-size: 16px !important;
+}
+
+.drawer-close-btn:hover {
+  color: #fff !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* ===== Logo ===== */
+
 .sider-logo {
   display: flex;
   align-items: center;
@@ -72,7 +97,8 @@
   font-weight: 400;
 }
 
-/* Divider */
+/* ===== Divider ===== */
+
 .sider-divider {
   height: 1px;
   margin: 4px 20px 12px;
@@ -84,7 +110,8 @@
   );
 }
 
-/* Menu */
+/* ===== Menu ===== */
+
 .sider-menu {
   background: transparent !important;
   border-inline-end: none !important;
@@ -117,7 +144,8 @@
   font-size: 17px !important;
 }
 
-/* Sider Footer */
+/* ===== Sider Footer ===== */
+
 .sider-footer {
   padding: 16px 20px;
   text-align: center;
@@ -129,19 +157,25 @@
   color: rgba(255, 255, 255, 0.25) !important;
 }
 
-/* ===== Header ===== */
+/* ===== Content Layout ===== */
 
 .main-content-layout {
   transition: margin-left var(--transition-normal);
 }
 
-.main-sider:not(.ant-layout-sider-collapsed) ~ .main-content-layout {
+.main-content-layout.expanded {
   margin-left: 260px;
 }
 
-.main-sider.ant-layout-sider-collapsed ~ .main-content-layout {
+.main-content-layout.collapsed {
   margin-left: 72px;
 }
+
+.main-content-layout.mobile {
+  margin-left: 0;
+}
+
+/* ===== Header ===== */
 
 .main-header {
   background: var(--bg-header) !important;
@@ -159,11 +193,14 @@
 
 .collapse-btn {
   font-size: 18px !important;
-  width: 40px !important;
-  height: 40px !important;
+  width: 44px !important;
+  height: 44px !important;
   border-radius: 8px !important;
   color: var(--text-secondary) !important;
   transition: all var(--transition-fast) !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
 }
 
 .collapse-btn:hover {
@@ -218,14 +255,71 @@
   background: transparent !important;
 }
 
-/* ===== Responsive ===== */
+/* ============================== */
+/* ===== RESPONSIVE MOBILE ===== */
+/* ============================== */
 
 @media (max-width: 992px) {
-  .main-sider:not(.ant-layout-sider-collapsed) ~ .main-content-layout {
-    margin-left: 72px;
+  .header-badge .badge-text {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .main-header {
+    padding: 0 16px !important;
+    height: 56px;
+  }
+
+  .main-content {
+    padding: 16px;
+    min-height: calc(100vh - 56px - 60px);
+  }
+
+  .main-footer {
+    padding: 14px 16px !important;
+  }
+
+  .main-footer .ant-typography {
+    font-size: 11px !important;
   }
 
   .header-badge {
+    padding: 4px 10px;
+  }
+
+  .header-badge .badge-text {
     display: none;
+  }
+
+  .collapse-btn {
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  /* Drawer menu items — bigger touch targets */
+  .mobile-drawer .sider-menu .ant-menu-item {
+    height: 48px !important;
+    line-height: 48px !important;
+    font-size: 15px;
+    margin: 4px 0 !important;
+  }
+
+  .mobile-drawer .sider-menu .ant-menu-item .anticon {
+    font-size: 19px !important;
+  }
+
+  .mobile-drawer .sider-logo {
+    padding: 16px 20px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    padding: 12px;
+  }
+
+  .main-header {
+    padding: 0 12px !important;
   }
 }

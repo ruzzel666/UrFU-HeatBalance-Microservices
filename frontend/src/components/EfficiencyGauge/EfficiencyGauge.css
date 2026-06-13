@@ -75,3 +75,46 @@
     transform: scale(1);
   }
 }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .efficiency-gauge {
+    padding: 8px;
+    gap: 8px;
+  }
+
+  .gauge-value {
+    font-size: 26px;
+  }
+
+  .gauge-percent {
+    font-size: 14px;
+  }
+
+  .gauge-glow {
+    width: 110px;
+    height: 110px;
+  }
+
+  .gauge-label {
+    gap: 4px;
+  }
+
+  .gauge-label .ant-typography {
+    font-size: 13px !important;
+  }
+
+  .gauge-symbol {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gauge-value {
+    font-size: 22px;
+  }
+
+  .gauge-percent {
+    font-size: 12px;
+  }
+}

@@ -273,21 +273,200 @@
     padding: 16px !important;
   }
 
-  .drum-dryer-page .page-header-tag {
-    margin-left: 0;
+  .drum-dryer-page .page-header {
+    gap: 10px;
+    margin-bottom: 16px;
   }
 
+  .drum-dryer-page .page-header-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    border-radius: 10px;
+  }
+
+  .drum-dryer-page .page-header h3.ant-typography {
+    font-size: 18px !important;
+  }
+
+  .drum-dryer-page .page-header-tag {
+    margin-left: 0;
+    order: -1;
+    align-self: flex-start;
+  }
+
+  /* Tabs — scrollable, icons hidden */
+  .drum-dryer-page .form-tabs .ant-tabs-nav {
+    margin-bottom: 16px !important;
+  }
+
+  .drum-dryer-page .form-tabs .ant-tabs-tab {
+    padding: 8px 2px !important;
+    font-size: 13px;
+  }
+
+  .drum-dryer-page .form-tabs .ant-tabs-tab .anticon {
+    display: none;
+  }
+
+  .drum-dryer-page .form-tabs .ant-tabs-nav-wrap {
+    overflow-x: auto !important;
+  }
+
+  .drum-dryer-page .tab-description {
+    font-size: 13px;
+    margin-bottom: 14px;
+  }
+
+  .drum-dryer-page .field-label {
+    font-size: 13px;
+  }
+
+  .drum-dryer-page .field-symbol {
+    font-size: 11px;
+  }
+
+  /* Actions — stack vertically */
   .drum-dryer-page .form-actions {
     flex-direction: column;
     align-items: stretch;
+    gap: 12px;
+  }
+
+  .drum-dryer-page .form-actions .ant-space {
+    display: flex !important;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .drum-dryer-page .form-actions .ant-space-item {
+    width: 100%;
   }
 
   .drum-submit-btn {
-    width: 100%;
+    width: 100% !important;
+    height: 48px !important;
+    font-size: 14px !important;
+    padding: 0 16px !important;
+  }
+
+  .drum-dryer-page .form-actions button:not(.drum-submit-btn) {
+    width: 100% !important;
+    height: 44px !important;
+  }
+
+  .drum-dryer-page .form-hint {
+    text-align: center;
+    justify-content: center;
+    font-size: 12px;
+  }
+
+  .drum-dryer-page .ant-input-number-group-addon {
+    font-size: 12px;
+    min-width: 28px;
+    padding: 0 6px;
+  }
+
+  /* Results — stat cards */
+  .drum-dryer-page .stat-card .ant-card-body {
+    min-height: 140px;
+    padding: 16px 12px !important;
+  }
+
+  .drum-dryer-page .stat-card .ant-statistic-content {
+    font-size: 18px;
+  }
+
+  .drum-dryer-page .stat-card .ant-statistic-title {
+    font-size: 11.5px;
+    line-height: 1.3;
+  }
+
+  .drum-dryer-page .stat-card .ant-statistic-content-suffix {
+    font-size: 11px;
+  }
+
+  .drum-dryer-page .summary-cards {
+    margin-bottom: 16px;
+  }
+
+  .drum-dryer-page .results-section {
+    margin-bottom: 16px;
+  }
+
+  .drum-dryer-page .results-section .ant-card-head {
+    padding: 12px 16px !important;
+  }
+
+  .drum-dryer-page .results-section .ant-card-body {
+    padding: 16px !important;
+  }
+
+  .drum-dryer-page .results-section h4.ant-typography {
+    font-size: 16px !important;
   }
 
   .drum-dryer-page .section-header {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .drum-dryer-page .section-header .ant-segmented {
+    width: 100%;
+  }
+
+  .drum-dryer-page .back-link {
+    font-size: 13px;
+    margin-bottom: 14px;
+    padding: 8px 0;
+  }
+
+  .drum-dryer-page .combustion-collapse .ant-table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .drum-dryer-page .combustion-collapse .ant-collapse-header {
+    font-size: 13px !important;
+  }
+
+  .drum-dryer-page .combustion-collapse .ant-collapse-content-box {
+    padding: 10px !important;
+  }
+
+  .drum-dryer-page .summary-card .efficiency-gauge {
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .drum-dryer-page .page-header h3.ant-typography {
+    font-size: 16px !important;
+  }
+
+  .drum-dryer-page .form-card .ant-card-body {
+    padding: 12px !important;
+  }
+
+  .drum-dryer-page .form-tabs .ant-tabs-tab {
+    font-size: 12px;
+    padding: 6px 0 !important;
+  }
+
+  .drum-dryer-page .stat-card .ant-statistic-content {
+    font-size: 16px;
+  }
+
+  .drum-dryer-page .stat-card .ant-card-body {
+    min-height: 120px;
+    padding: 12px 8px !important;
+  }
+
+  .drum-dryer-page .results-section .ant-card-head {
+    padding: 10px 12px !important;
+  }
+
+  .drum-dryer-page .results-section .ant-card-body {
+    padding: 12px !important;
   }
 }
