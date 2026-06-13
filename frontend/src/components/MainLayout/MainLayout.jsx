@@ -61,7 +61,7 @@ export default function MainLayout() {
           </div>
           {!collapsed && (
             <div className="logo-text">
-              <span className="logo-title">ТеплоБаланс</span>
+              <span className="logo-title">Тепловой баланс</span>
               <span className="logo-subtitle">Расчёт параметров</span>
             </div>
           )}
@@ -83,7 +83,7 @@ export default function MainLayout() {
         {!collapsed && (
           <div className="sider-footer">
             <Text className="sider-footer-text">
-              УрФУ · 2025
+              УрФУ · 2026
             </Text>
           </div>
         )}

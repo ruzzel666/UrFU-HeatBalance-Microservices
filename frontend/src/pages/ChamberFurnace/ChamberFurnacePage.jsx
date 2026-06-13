@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { calculateChamberFurnace } from '../../api/chamberFurnaceApi';
+import ResultsView from './ResultsView';
 import {
   Form,
   InputNumber,
@@ -234,17 +236,16 @@ function TempScheduleTab({ form }) {
 export default function ChamberFurnacePage() {
   const [form] = Form.useForm();
   const [loading, setLoading] = useState(false);
+  const [results, setResults] = useState(null);
   const [messageApi, contextHolder] = message.useMessage();
 
   const handleSubmit = async (values) => {
     setLoading(true);
     try {
-      // TODO: Итерация 3 — подключить мок-данные / API
       console.log('Submitted values:', values);
       messageApi.success('Данные отправлены на расчёт!');
-      // Simulate API delay
-      await new Promise((resolve) => setTimeout(resolve, 1500));
-      messageApi.info('Результаты расчёта будут доступны в Итерации 3');
+      const data = await calculateChamberFurnace(values);
+      setResults(data);
     } catch {
       messageApi.error('Ошибка при отправке данных');
     } finally {
@@ -336,6 +337,31 @@ export default function ChamberFurnacePage() {
       ),
     },
   ];
+
+  /* If results are loaded, show ResultsView */
+  if (results) {
+    return (
+      <div className="chamber-furnace-page">
+        {contextHolder}
+
+        {/* Page Header */}
+        <div className="page-header animate-fade-in-up">
+          <div className="page-header-icon">
+            <FireOutlined />
+          </div>
+          <div>
+            <Title level={3} style={{ margin: 0 }}>
+              Камерная сушильная печь
+            </Title>
+            <Text type="secondary">Расчёт теплового баланса · Результаты</Text>
+          </div>
+          <Tag color="volcano" className="page-header-tag">Расчёт выполнен</Tag>
+        </div>
+
+        <ResultsView data={results} onBack={() => setResults(null)} />
+      </div>
+    );
+  }
 
   return (
     <div className="chamber-furnace-page">

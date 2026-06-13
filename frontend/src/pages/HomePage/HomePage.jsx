@@ -33,9 +33,9 @@ const furnaceTypes = [
     icon: <ExperimentOutlined />,
     path: '/drum-dryer',
     gradient: 'linear-gradient(135deg, #1890ff 0%, #36cfc9 100%)',
-    tag: 'В разработке',
-    tagColor: 'processing',
-    params: 'Скоро',
+    tag: 'Доступен',
+    tagColor: 'success',
+    params: '21 параметр',
   },
 ];
 

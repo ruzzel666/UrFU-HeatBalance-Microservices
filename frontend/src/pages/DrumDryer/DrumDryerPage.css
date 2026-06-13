@@ -1,0 +1,293 @@
+/* ===== DrumDryerPage Styles ===== */
+
+.drum-dryer-page {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Reuse shared styles from ChamberFurnacePage */
+
+.drum-dryer-page .page-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.drum-dryer-page .page-header-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.drum-dryer-page .drum-icon {
+  background: linear-gradient(135deg, #1890ff 0%, #36cfc9 100%);
+  box-shadow: 0 4px 14px rgba(24, 144, 255, 0.3);
+}
+
+.drum-dryer-page .page-header-tag {
+  margin-left: auto;
+  font-weight: 600;
+  font-size: 12px;
+  border-radius: 20px;
+  padding: 2px 14px;
+}
+
+/* Form Card */
+.drum-dryer-page .form-card {
+  border-radius: var(--radius-lg) !important;
+  box-shadow: var(--shadow-sm) !important;
+  border: 1px solid rgba(0, 0, 0, 0.04) !important;
+}
+
+.drum-dryer-page .form-card .ant-card-body {
+  padding: 28px 32px !important;
+}
+
+/* Tabs */
+.drum-dryer-page .form-tabs .ant-tabs-nav {
+  margin-bottom: 24px !important;
+}
+
+.drum-dryer-page .form-tabs .ant-tabs-tab {
+  padding: 10px 4px !important;
+  font-weight: 500;
+  transition: all var(--transition-normal) !important;
+}
+
+.drum-dryer-page .form-tabs .ant-tabs-tab .anticon {
+  margin-right: 6px;
+}
+
+.drum-dryer-page .form-tabs .ant-tabs-tab-active {
+  font-weight: 600;
+}
+
+/* Tab Content */
+.drum-dryer-page .tab-content {
+  padding: 4px 0;
+}
+
+.drum-dryer-page .tab-description {
+  display: block;
+  margin-bottom: 20px;
+  font-size: 13.5px;
+  line-height: 1.6;
+}
+
+/* Field Labels */
+.drum-dryer-page .field-label {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.drum-dryer-page .field-symbol {
+  font-size: 12px;
+  font-style: italic;
+  opacity: 0.7;
+}
+
+/* Input overrides */
+.drum-dryer-page .ant-input-number:hover,
+.drum-dryer-page .ant-input-number-focused {
+  border-color: #1890ff !important;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.08) !important;
+}
+
+.drum-dryer-page .ant-input-number-group-addon {
+  background: rgba(24, 144, 255, 0.04);
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 500;
+  min-width: 36px;
+  text-align: center;
+}
+
+/* Submit button — blue theme */
+.drum-submit-btn {
+  height: 46px !important;
+  padding: 0 32px !important;
+  font-weight: 600 !important;
+  font-size: 15px !important;
+  border-radius: 10px !important;
+  background: linear-gradient(135deg, #1890ff, #36cfc9) !important;
+  border: none !important;
+  box-shadow: 0 4px 14px rgba(24, 144, 255, 0.3) !important;
+  transition: all var(--transition-normal) !important;
+}
+
+.drum-submit-btn:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: 0 6px 20px rgba(24, 144, 255, 0.4) !important;
+}
+
+/* Actions */
+.drum-dryer-page .form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.drum-dryer-page .form-hint {
+  font-size: 13px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Results view overrides for drum */
+.drum-dryer-page .results-view {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.drum-dryer-page .back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  padding: 6px 0;
+}
+
+.drum-dryer-page .back-link:hover {
+  color: #1890ff;
+  gap: 10px;
+}
+
+.drum-dryer-page .summary-cards {
+  margin-bottom: 24px;
+}
+
+.drum-dryer-page .summary-card {
+  border-radius: var(--radius-lg) !important;
+  text-align: center;
+  height: 100%;
+  box-shadow: var(--shadow-sm) !important;
+  border: 1px solid rgba(0, 0, 0, 0.04) !important;
+  transition: all var(--transition-normal) !important;
+}
+
+.drum-dryer-page .summary-card:hover {
+  box-shadow: var(--shadow-md) !important;
+  transform: translateY(-2px) !important;
+}
+
+.drum-dryer-page .stat-card .ant-card-body {
+  padding: 24px 20px !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 180px;
+}
+
+.drum-dryer-page .stat-icon {
+  color: #1890ff !important;
+  font-size: 18px !important;
+}
+
+.drum-dryer-page .stat-card .ant-statistic-title {
+  font-size: 12.5px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.drum-dryer-page .stat-card .ant-statistic-content {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.drum-dryer-page .stat-card .ant-statistic-content-suffix {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--text-secondary);
+  margin-left: 4px;
+}
+
+.drum-dryer-page .stat-symbol {
+  font-size: 12px;
+  font-style: italic;
+  margin-top: 6px;
+  display: block;
+}
+
+.drum-dryer-page .results-section {
+  border-radius: var(--radius-lg) !important;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-sm) !important;
+  border: 1px solid rgba(0, 0, 0, 0.04) !important;
+}
+
+.drum-dryer-page .results-section .ant-card-head {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 16px 24px !important;
+}
+
+.drum-dryer-page .results-section .ant-card-body {
+  padding: 24px !important;
+}
+
+.drum-dryer-page .section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  width: 100%;
+}
+
+.drum-dryer-page .combustion-collapse .ant-collapse-header {
+  font-weight: 500 !important;
+  font-size: 14px;
+}
+
+.drum-dryer-page .combustion-collapse .ant-collapse-content-box {
+  padding: 16px !important;
+}
+
+.drum-dryer-page .combustion-collapse .ant-table-thead > tr > th {
+  background: rgba(24, 144, 255, 0.03) !important;
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .drum-dryer-page .form-card .ant-card-body {
+    padding: 16px !important;
+  }
+
+  .drum-dryer-page .page-header-tag {
+    margin-left: 0;
+  }
+
+  .drum-dryer-page .form-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .drum-submit-btn {
+    width: 100%;
+  }
+
+  .drum-dryer-page .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

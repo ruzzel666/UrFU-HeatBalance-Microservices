@@ -10,3 +10,14 @@ services:
     command: start-dev
     ports:
       - "8080:8080"
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: heatbalance-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - keycloak
+    restart: unless-stopped
