@@ -1,0 +1,57 @@
+@page
+@model ProductWebApp.Pages.Cabinet.DataSetDetailsModel
+@{
+    ViewData["Title"] = "Набор данных";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <div>
+        <h1 class="h4 mb-1">@Model.DataSet.Name</h1>
+        <div class="text-muted">Тип: <strong>@Model.DataSet.CalculationType.ToDisplayName()</strong></div>
+        @if (!string.IsNullOrWhiteSpace(Model.DataSet.Comment))
+        {
+            <div class="text-muted small">@Model.DataSet.Comment</div>
+        }
+    </div>
+    <div class="d-flex gap-2">
+        <a class="btn btn-outline-secondary" href="/Cabinet">Назад</a>
+        <a class="btn btn-outline-secondary" href="/Cabinet/Edit?id=@Model.DataSet.Id">Редактировать</a>
+        <form method="post" asp-page-handler="Run">
+            <input type="hidden" name="id" value="@Model.DataSet.Id" />
+            <button type="submit" class="btn btn-success">Рассчитать</button>
+        </form>
+    </div>
+</div>
+
+<h2 class="h6">История расчётов</h2>
+
+@if (Model.Runs.Count == 0)
+{
+    <div class="alert alert-info">Расчёты по этому набору ещё не выполнялись.</div>
+}
+else
+{
+    <div class="table-responsive">
+        <table class="table table-sm align-middle">
+            <thead>
+                <tr>
+                    <th>Время</th>
+                    <th class="text-end">Действия</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var r in Model.Runs)
+                {
+                    <tr>
+                        <td>@r.ExecutedAt.ToLocalTime().ToString("yyyy-MM-dd HH:mm")</td>
+                        <td class="text-end">
+                            <a class="btn btn-sm btn-outline-primary" href="/Cabinet/RunDetails?id=@r.Id">Открыть</a>
+                            <a class="btn btn-sm btn-outline-secondary" href="/Cabinet/RunDetails?id=@r.Id&handler=Pdf">PDF</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+

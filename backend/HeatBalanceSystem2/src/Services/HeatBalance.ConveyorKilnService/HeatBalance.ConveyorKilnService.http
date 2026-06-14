@@ -1,0 +1,6 @@
+@HeatBalance.ConveyorKilnService_HostAddress = http://localhost:5073
+
+GET {{HeatBalance.ConveyorKilnService_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

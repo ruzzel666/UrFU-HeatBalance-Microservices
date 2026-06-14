@@ -1,0 +1,40 @@
+@page
+@model ProductWebApp.Pages.IndexModel
+@{
+    ViewData["Title"] = "Тепловой баланс сушильных установок";
+}
+
+<div class="row g-4">
+    <div class="col-lg-8">
+        <div class="p-4 bg-light border rounded-3">
+            <h1 class="h3 mb-3">АС расчёта теплового баланса сушильных установок</h1>
+            <p class="mb-3">
+                Веб‑приложение для авторизованных пользователей: хранение наборов исходных данных, выполнение расчётов,
+                представление результатов (числа + графики) и формирование отчётов (экран + PDF).
+            </p>
+            <ul class="mb-0">
+                <li>Конвейерная сушильная печь</li>
+                <li>Камерная сушильная печь</li>
+                <li>Электрическая сушильная печь</li>
+                <li>Сушильный барабан</li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="card">
+            <div class="card-body">
+                @if (User?.Identity?.IsAuthenticated == true)
+                {
+                    <p class="mb-3">Вы вошли как <strong>@User.Identity!.Name</strong>.</p>
+                    <a class="btn btn-primary w-100" href="/Cabinet">Перейти в личный кабинет</a>
+                }
+                else
+                {
+                    <p class="mb-3">Для работы требуется вход в систему.</p>
+                    <a class="btn btn-primary w-100 mb-2" href="/Identity/Account/Login">Войти</a>
+                    <a class="btn btn-outline-secondary w-100" href="/Identity/Account/Register">Регистрация</a>
+                }
+            </div>
+        </div>
+    </div>
+</div>

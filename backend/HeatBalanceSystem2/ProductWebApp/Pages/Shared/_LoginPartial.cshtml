@@ -1,0 +1,30 @@
+@inject IConfiguration Configuration
+
+@{
+    var microservices = Configuration.GetValue<bool>("Microservices:Enabled");
+}
+
+@if (User.Identity?.IsAuthenticated == true)
+{
+    <span class="navbar-text text-white me-3">@User.Identity!.Name</span>
+    @if (microservices)
+    {
+        <a class="btn btn-light btn-sm" href="/logout">Выйти</a>
+    }
+    else
+    {
+        <a class="btn btn-outline-light btn-sm me-2" href="/Identity/Account/Manage">Профиль</a>
+        <form class="d-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="/" method="post">
+            <button type="submit" class="btn btn-light btn-sm">Выйти</button>
+        </form>
+    }
+}
+else if (microservices)
+{
+    <a class="btn btn-light btn-sm" href="/login">Войти через OAuth</a>
+}
+else
+{
+    <a class="btn btn-outline-light btn-sm me-2" href="/Identity/Account/Login">Войти</a>
+    <a class="btn btn-light btn-sm" href="/Identity/Account/Register">Регистрация</a>
+}

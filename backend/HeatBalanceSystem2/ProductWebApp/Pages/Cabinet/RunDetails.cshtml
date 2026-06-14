@@ -1,0 +1,114 @@
+@page
+@model ProductWebApp.Pages.Cabinet.RunDetailsModel
+@{
+    ViewData["Title"] = "Результаты расчёта";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <div>
+        <h1 class="h4 mb-1">Результаты расчёта</h1>
+        <div class="text-muted">
+            Набор: <strong>@Model.DataSet.Name</strong> · Тип: <strong>@Model.DataSet.CalculationType.ToDisplayName()</strong> ·
+            Время: @Model.Run.ExecutedAt.ToLocalTime().ToString("yyyy-MM-dd HH:mm")
+        </div>
+    </div>
+    <div class="d-flex gap-2">
+        <a class="btn btn-outline-secondary" href="/Cabinet">Назад</a>
+        <a class="btn btn-primary" href="/Cabinet/RunDetails?id=@Model.Run.Id&handler=Pdf">Экспорт PDF</a>
+    </div>
+</div>
+
+@if (!string.IsNullOrWhiteSpace(Model.Result.Notes))
+{
+    <div class="alert alert-warning">@Model.Result.Notes</div>
+}
+
+<div class="row g-3">
+    <div class="col-lg-5">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="h6">Итоги</h2>
+                <dl class="row mb-0">
+                    <dt class="col-7">Подвод энергии, кДж/ч</dt>
+                    <dd class="col-5 text-end">@Model.Result.TotalInputKJPerHour.ToString("F2")</dd>
+
+                    <dt class="col-7">Полезная теплота, кДж/ч</dt>
+                    <dd class="col-5 text-end">@Model.Result.UsefulHeatKJPerHour.ToString("F2")</dd>
+
+                    <dt class="col-7">Потери, кДж/ч</dt>
+                    <dd class="col-5 text-end">@Model.Result.LossesKJPerHour.ToString("F2")</dd>
+
+                    <dt class="col-7">Невязка/прочее, кДж/ч</dt>
+                    <dd class="col-5 text-end">@Model.Result.UnaccountedKJPerHour.ToString("F2")</dd>
+
+                    <dt class="col-7">КПД</dt>
+                    <dd class="col-5 text-end">@((Model.Result.Efficiency * 100).ToString("F1"))%</dd>
+                </dl>
+            </div>
+        </div>
+
+        <div class="card mt-3">
+            <div class="card-body">
+                <h2 class="h6">Статьи теплового баланса</h2>
+                <div class="table-responsive">
+                    <table class="table table-sm">
+                        <thead>
+                            <tr>
+                                <th>Статья</th>
+                                <th class="text-end">кДж/ч</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var c in Model.Result.Components)
+                            {
+                                <tr>
+                                    <td>@c.Name</td>
+                                    <td class="text-end">@c.ValueKJPerHour.ToString("F2")</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-7">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="h6">График (кДж/ч)</h2>
+                <canvas id="hbChart" height="160"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script>
+        const labels = @Html.Raw(Model.ChartLabelsJson);
+        const values = @Html.Raw(Model.ChartValuesJson);
+
+        const ctx = document.getElementById('hbChart');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'кДж/ч',
+                    data: values,
+                    backgroundColor: 'rgba(13, 110, 253, 0.5)',
+                    borderColor: 'rgba(13, 110, 253, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: { beginAtZero: true }
+                }
+            }
+        });
+    </script>
+}
+

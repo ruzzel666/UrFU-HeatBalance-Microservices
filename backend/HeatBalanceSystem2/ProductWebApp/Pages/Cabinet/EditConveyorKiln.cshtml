@@ -1,0 +1,75 @@
+@page
+@model ProductWebApp.Pages.Cabinet.EditConveyorKilnModel
+@{
+    ViewData["Title"] = "Редактировать: Конвейерная печь";
+}
+
+<h1 class="h4 mb-3">Редактирование — конвейерная сушильная печь</h1>
+
+<form method="post" class="row g-3">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="col-md-6">
+        <label class="form-label">Название набора</label>
+        <input class="form-control" asp-for="Name" />
+        <span class="text-danger" asp-validation-for="Name"></span>
+    </div>
+    <div class="col-md-6">
+        <label class="form-label">Комментарий</label>
+        <input class="form-control" asp-for="Comment" />
+        <span class="text-danger" asp-validation-for="Comment"></span>
+    </div>
+
+    <div class="col-12"><hr /></div>
+
+    <div class="col-md-4">
+        <label class="form-label">Расход мокрого материала, кг/ч</label>
+        <input class="form-control" asp-for="Input.WetMaterialMassFlowKgPerHour" />
+        <span class="text-danger" asp-validation-for="Input.WetMaterialMassFlowKgPerHour"></span>
+    </div>
+    <div class="col-md-4">
+        <label class="form-label">Влажность начальная (массовая доля)</label>
+        <input class="form-control" asp-for="Input.MoistureInMassFraction" />
+        <span class="text-danger" asp-validation-for="Input.MoistureInMassFraction"></span>
+    </div>
+    <div class="col-md-4">
+        <label class="form-label">Влажность конечная (массовая доля)</label>
+        <input class="form-control" asp-for="Input.MoistureOutMassFraction" />
+        <span class="text-danger" asp-validation-for="Input.MoistureOutMassFraction"></span>
+    </div>
+
+    <div class="col-md-4">
+        <label class="form-label">Температура материала на входе, °C</label>
+        <input class="form-control" asp-for="Input.MaterialTempInC" />
+    </div>
+    <div class="col-md-4">
+        <label class="form-label">Температура материала на выходе, °C</label>
+        <input class="form-control" asp-for="Input.MaterialTempOutC" />
+    </div>
+    <div class="col-md-4">
+        <label class="form-label">Доля потерь (0..1)</label>
+        <input class="form-control" asp-for="Input.HeatLossFraction" />
+        <span class="text-danger" asp-validation-for="Input.HeatLossFraction"></span>
+    </div>
+
+    <div class="col-md-4">
+        <label class="form-label">Низшая теплота сгорания, кДж/кг</label>
+        <input class="form-control" asp-for="Input.FuelLowerHeatingValueKJPerKg" />
+        <span class="text-danger" asp-validation-for="Input.FuelLowerHeatingValueKJPerKg"></span>
+    </div>
+    <div class="col-md-4">
+        <label class="form-label">Расход топлива, кг/ч</label>
+        <input class="form-control" asp-for="Input.FuelMassFlowKgPerHour" />
+        <span class="text-danger" asp-validation-for="Input.FuelMassFlowKgPerHour"></span>
+    </div>
+
+    <div class="col-12 d-flex gap-2">
+        <button type="submit" class="btn btn-primary">Сохранить</button>
+        <a class="btn btn-outline-secondary" href="/Cabinet">Отмена</a>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+

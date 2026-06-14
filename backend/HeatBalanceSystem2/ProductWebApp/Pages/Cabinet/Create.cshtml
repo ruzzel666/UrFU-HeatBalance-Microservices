@@ -1,0 +1,44 @@
+@page
+@model ProductWebApp.Pages.Cabinet.CreateModel
+@{
+    ViewData["Title"] = "Создание набора данных";
+}
+
+<h1 class="h4 mb-3">Создать набор исходных данных</h1>
+<p class="text-muted">Выберите тип сушильной установки.</p>
+
+<div class="row g-3">
+    <div class="col-md-6 col-lg-3">
+        <a class="card h-100 text-decoration-none" href="/Cabinet/CreateConveyorKiln">
+            <div class="card-body">
+                <div class="fw-semibold">Конвейерная печь</div>
+                <div class="text-muted small">Набор исходных данных для конвейерной сушильной печи</div>
+            </div>
+        </a>
+    </div>
+    <div class="col-md-6 col-lg-3">
+        <a class="card h-100 text-decoration-none" href="/Cabinet/CreateChamberKiln">
+            <div class="card-body">
+                <div class="fw-semibold">Камерная печь</div>
+                <div class="text-muted small">Набор исходных данных для камерной сушильной печи</div>
+            </div>
+        </a>
+    </div>
+    <div class="col-md-6 col-lg-3">
+        <a class="card h-100 text-decoration-none" href="/Cabinet/CreateElectricKiln">
+            <div class="card-body">
+                <div class="fw-semibold">Электрическая печь</div>
+                <div class="text-muted small">Набор исходных данных для электрической сушильной печи</div>
+            </div>
+        </a>
+    </div>
+    <div class="col-md-6 col-lg-3">
+        <a class="card h-100 text-decoration-none" href="/Cabinet/CreateDrumDryer">
+            <div class="card-body">
+                <div class="fw-semibold">Сушильный барабан</div>
+                <div class="text-muted small">Набор исходных данных для сушильного барабана</div>
+            </div>
+        </a>
+    </div>
+</div>
+

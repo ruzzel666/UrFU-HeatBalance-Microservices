@@ -1,0 +1,6 @@
+@HeatBalance.DatasetService_HostAddress = http://localhost:5179
+
+GET {{HeatBalance.DatasetService_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

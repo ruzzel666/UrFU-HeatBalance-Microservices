@@ -1,0 +1,6 @@
+@HeatBalance.RunService_HostAddress = http://localhost:5186
+
+GET {{HeatBalance.RunService_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

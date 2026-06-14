@@ -1,0 +1,6 @@
+@HeatBalance.ElectricKilnService_HostAddress = http://localhost:5214
+
+GET {{HeatBalance.ElectricKilnService_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
